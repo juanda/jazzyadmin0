@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <!--
+    <parameters>
+        <parameter key="jw_acme.example.class">Jazzyweb\AcmeBundle\Example</parameter>
+    </parameters>
+
+    <services>
+        <service id="jw_acme.example" class="%jw_acme.example.class%">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+    <services>
+        <service id="sonata.admin.incidencia" class="Jazzyweb\AcmeBundle\Admin\IncidenciaAdmin">
+            <tag name="sonata.admin" manager_type="orm" label="Incidencias"/>
+            <argument />
+            <argument>Jazzyweb\AcmeBundle\Entity\Incidencia</argument>
+            <argument />
+            <call method="setTranslationDomain">
+                <argument>JwAcmeBundle</argument>
+            </call>
+        </service>
+    </services>
+</container>

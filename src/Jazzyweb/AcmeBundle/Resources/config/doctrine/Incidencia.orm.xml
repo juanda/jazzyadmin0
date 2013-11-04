@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity repository-class="Jazzyweb\AcmeBundle\Entity\IncidenciaRepository" name="Jazzyweb\AcmeBundle\Entity\Incidencia" table="incidencias">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="descripcion" type="string" column="descripcion" length="255"/>
+        <field name="observaciones" type="string" column="observaciones" length="255" nullable="false"/>
+        <field name="estado" type="string" column="estado" length="255"/>
+        <field name="prioridad" type="string" column="prioridad" length="255" />
+        <field name="importancia" type="string" column="importancia" length="255"/>
+        <field name="reincidente" type="boolean" column="reincidente"/>
+        <field name="fechaApertura" type="datetime" column="fechaApertura"/>
+        <field name="fechaCierre" type="datetime" column="fechaCierre" nullable="true"/>
+        
+        <many-to-one field="departamento" target-entity="Jazzyweb\UserBundle\Entity\Group">
+            <join-column name="id_departamento" referenced-column-name="id" />
+        </many-to-one>
+
+        <many-to-one field="usuario" target-entity="Jazzyweb\UserBundle\Entity\User">
+            <join-column name="id_usuario" referenced-column-name="id" />
+        </many-to-one>
+
+    </entity>
+</doctrine-mapping>
