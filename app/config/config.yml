@@ -27,7 +27,7 @@ sonata_user:
         group:  Jazzyweb\UserBundle\Entity\Group
 
 sonata_admin:
-  title:   Administración Conforme
+  title:   JazzyAdmin0
 #  title_logo: images/space_invaders.jpg
   security:
         handler: sonata.admin.security.handler.role
