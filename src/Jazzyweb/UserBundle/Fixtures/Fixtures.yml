@@ -8,7 +8,7 @@ Jazzyweb\UserBundle\Entity\User:
   usuario_admin:
         username: admin
         email: admin@jazzyweb.com
-        password: pruebas
+        password: admin
         enabled: 1
         roles: [ROLE_SUPER_ADMIN]
         groups: [ @group_admin ]

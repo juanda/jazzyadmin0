@@ -10,8 +10,8 @@ class FixturesCommand extends ContainerAwareCommand {
 
     protected function configure() {
         $this
-                ->setName('jwsecurity:fixtures:load')
-                ->setDescription('Load fixtures')
+            ->setName('jwsecurity:fixtures:load')
+            ->setDescription('Load fixtures')
         ;
     }
 
@@ -20,26 +20,29 @@ class FixturesCommand extends ContainerAwareCommand {
         $doctrine = $this->getContainer()->get('doctrine');
 
         try {
-            $em = $doctrine->getEntityManager();   
+            $em = $doctrine->getEntityManager();
             $userManager = $this->getContainer()->get('fos_user.user_manager');
-            
+
             $query = $em
-                    ->createQuery('DELETE FROM JwUserBundle:User u');
+                ->createQuery('DELETE FROM JwUserBundle:Group g');
+            $query->execute();
+            $query = $em
+                ->createQuery('DELETE FROM JwUserBundle:User u');
             $query->execute();
 
             $objects = \Nelmio\Alice\Fixtures::load(__DIR__ . '/../Fixtures/Fixtures.yml', $em);
 
-            
-            
+
+
             $users = $userManager->findUsers();
-            
+
             foreach($users as $user){
                 $user->setPlainPassword('pruebas');
                 $userManager->updateUser($user);
             }
-            
+
             $em->flush();
-            
+
             $output->writeln("Fixtures have been loaded");
         } catch (\Exception $e) {
             $output->writeln("<error>" . $e->getMessage() . "</error>");
