@@ -14,8 +14,8 @@ Jazzyweb\UserBundle\Entity\User:
         groups: [ @group_admin ]
   usuario{1..5}:
         username: <username()>        
-        email: <email()>         
-        password: pruebas  
+        email: <email()>
+        password: pruebas
         enabled: 1
         groups: [ @group_rrhh ]
 

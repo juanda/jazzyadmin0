@@ -19,5 +19,5 @@ Instalation
 
     php app/console jwsecurity:fixtures:load 
 
-Point your browser to http://your.server/app_dev.php and enter with username 'admin' and password 'admin'
+Point your browser to http://your.server/app_dev.php and enter with username 'admin' and password 'changeme'
 

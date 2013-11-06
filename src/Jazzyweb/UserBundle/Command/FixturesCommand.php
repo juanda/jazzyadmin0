@@ -37,7 +37,7 @@ class FixturesCommand extends ContainerAwareCommand {
             $users = $userManager->findUsers();
 
             foreach($users as $user){
-                $user->setPlainPassword('pruebas');
+                $user->setPlainPassword('changeme');
                 $userManager->updateUser($user);
             }
 
