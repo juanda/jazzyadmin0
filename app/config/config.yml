@@ -36,7 +36,8 @@ sonata_admin:
     groups:
       Usuarios de la Aplicacion:
         items:
-           - sonata.user.admin.user
+#           - sonata.user.admin.user
+           - jwuser.admin.user
            - sonata.user.admin.group
       Incidencias:
         items:

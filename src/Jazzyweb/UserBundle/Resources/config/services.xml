@@ -17,4 +17,19 @@
         </service>
     </services>
     -->
+    <services>
+        <service id="jwuser.admin.user" class="Jazzyweb\UserBundle\Admin\UserAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="%sonata.user.admin.groupname%" label="users" label_catalogue="SonataUserBundle" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%sonata.user.admin.user.entity%</argument>
+            <argument>%sonata.user.admin.user.controller%</argument>
+            <call method="setUserManager">
+                <argument type="service" id="fos_user.user_manager" />
+            </call>
+            <call method="setTranslationDomain">
+                <argument>%sonata.user.admin.user.translation_domain%</argument>
+            </call>
+        </service>
+       
+    </services>
 </container>

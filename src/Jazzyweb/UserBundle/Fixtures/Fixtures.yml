@@ -5,19 +5,13 @@ Jazzyweb\UserBundle\Entity\Group:
     __construct: [ Dpto. RRHH, [ ROLE_SONATA_ADMIN_INCIDENCIA_EDIT, ROLE_SONATA_ADMIN_INCIDENCIA_LIST, ROLE_SONATA_ADMIN_INCIDENCIA_CREATE, ROLE_SONATA_ADMIN_INCIDENCIA_VIEW, ROLE_SONATA_ADMIN_INCIDENCIA_DELETE, ROLE_SONATA_ADMIN_INCIDENCIA_EXPORT, ROLE_SONATA_ADMIN_INCIDENCIA_OPERATOR, ROLE_SONATA_ADMIN_INCIDENCIA_MASTER, ROLE_USER,  ROLE_SONATA_ADMIN ]]
 
 Jazzyweb\UserBundle\Entity\User:
-  usuario_juanda:
-        username: juanda        
-        email: juandalibaba@gmail.com        
-        password: pruebas  
+  usuario_admin:
+        username: admin
+        email: admin@jazzyweb.com
+        password: pruebas
         enabled: 1
         roles: [ROLE_SUPER_ADMIN]
         groups: [ @group_admin ]
-  usuario_pruebas:
-        username: pruebas        
-        email: pruebas@pruebasmail.pml        
-        password: pruebas  
-        enabled: 1
-        roles: [ROLE_ADMIN]
   usuario{1..5}:
         username: <username()>        
         email: <email()>         

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: juanda
- * Date: 5/11/13
- * Time: 18:41
- * To change this template use File | Settings | File Templates.
- */
 
 namespace Jazzyweb\UserBundle\Admin;
 
