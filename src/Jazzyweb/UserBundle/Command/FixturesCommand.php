@@ -17,6 +17,20 @@ class FixturesCommand extends ContainerAwareCommand {
 
     protected function execute(InputInterface $input, OutputInterface $output) {
 
+
+
+        $dialog = $this->getHelperSet()->get('dialog');
+
+        if (!$dialog->askConfirmation(
+            $output,
+            '<question>Proceed to load fixtures? (All data in database will be lost)</question>',
+            false
+        )) {
+            $output->writeln('<error>Action aborted</error>');
+            return;
+        }
+                        
+
         $doctrine = $this->getContainer()->get('doctrine');
 
         try {
